@@ -1,3 +1,5 @@
+"""this code calcule the tip that you want to give the waiter"""
+
 bill = float(input("whats is your bill $$ ?? \n"))
 percetip = int(input('whats percentage do you wanna give 10%, 12%, 15%\n'))
 

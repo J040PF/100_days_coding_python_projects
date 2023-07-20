@@ -5,7 +5,7 @@ s = "stone"
 sc = "scissor"
 
 list = ["paper", "stone", "scissor"]
-w_l = {p: [s], s: [sc], sc: [p]}
+win_loss = {p: [s], s: [sc], sc: [p]}
 
 while True:
 
@@ -13,11 +13,11 @@ while True:
                    "paper stone scissor\n")
     machine = random.choice(list)
 
-    print('you : {} - machine:{}'.format(player, machine))
+    print('you : {} - machine: {}'.format(player, machine))
 
     if machine == player:
         print('draw')       
-    elif w_l[player][0] == machine:
+    elif win_loss[player][0] == machine:
         print('you win')
-    elif w_l[machine][0] == player:
+    elif win_loss[machine][0] == player:
         print('you loss')

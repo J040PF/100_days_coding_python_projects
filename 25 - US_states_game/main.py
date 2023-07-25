@@ -4,11 +4,11 @@ from turtle import Screen, Turtle
 writer = Turtle()
 writer.penup()
 writer.hideturtle()
-data = pandas.read_csv('25 - csv/50_states.csv')
+data = pandas.read_csv('25 - US_states_game/50_states.csv')
 
 screen = Screen()
 screen.setup(725, 491)
-screen.bgpic('25 - csv/blank_states_img.gif')
+screen.bgpic('25 - US_states_game/blank_states_img.gif')
 game_is_on = True
 phase = 0
 n = len(data)

@@ -5,7 +5,8 @@ dealer = []
 player = []
 
 
-def random_cands():
+def random_cards():
+    # return a random card
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     card = random.choice(cards)
 
@@ -13,48 +14,57 @@ def random_cands():
 
 
 def check_value():
+    # check if the value is under 21
     player_score = sum(player)
     dealer_score = sum(dealer)
     print( 'player= {} , dealer = {}'.format(player_score, dealer_score))
 
     def under_21():
+
         if player_score > 21:
             print(input('dealer win'))
-            return
+            return False
 
         elif dealer_score > 21:
             print(input('player win'))
-            return
+            return False
+        
+        else:
+            return True
 
     if player_score > 21 or dealer_score > 21:
-        under_21()
-        return
+         return under_21()
 
 
-def get_card(*p):
-    de = [p]
+def get_card(*player):
+    de = [player]
 
     for y in de[0]:
         try:
-            y.append(random_cands())
+            y.append(random_cards())
         except:
             pass
 
 
-while True:
-    check_value()
+def main():
 
-    user_anwser = int(input('do you want take a card.. 1/0 '))
+    while True:
+        if check_value() is False:
+            break
 
-    if user_anwser == 1:
+        user_anwser = str(input('Do you want take a card.. n/y '))
 
-        while True:
-            check_value()
-            get_card(dealer)
+        if user_anwser == "n":
 
-    else:
-        get_card(player, dealer)
+            while True:
+                if check_value() is False:
+                    break
+                get_card(dealer)
 
+        else:
+            get_card(player, dealer)
+
+main()
 
 
 

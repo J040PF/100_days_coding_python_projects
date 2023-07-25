@@ -20,12 +20,15 @@ def check_value():
     def under_21():
         if player_score > 21:
             print(input('dealer win'))
+            return
 
         elif dealer_score > 21:
             print(input('player win'))
+            return
 
     if player_score > 21 or dealer_score > 21:
         under_21()
+        return
 
 
 def get_card(*p):

@@ -5,17 +5,20 @@ print(logo)
 players = {}
 
 
-def checkwinner():
+def check_winner():
     global players
     lu = []
     listbids = []
+
     for x in players:
         lu.append(x)
         listbids.append(players[x])
+
     if len(lu) > 1:
         winner = max(listbids)
         w = listbids.index(winner)
         print(lu[w])
+        
     else:
         print(lu[0])
 
@@ -29,5 +32,5 @@ while True:
         players[name] = bid
     else:
         print('auction finished')
-        checkwinner()
+        check_winner()
         break
